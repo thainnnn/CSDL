@@ -1,0 +1,66 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+</head>
+<body>
+    <input type="text" id="age"/>
+    <button id="button">OK</button>
+    <p id="out" class="text-light">Show</p>
+
+    <script>
+        const button = document.getElementById('button');
+        const age = document.getElementById('age');
+        const out = document.getElementById('out')
+
+        button.addEventListener('click', () => {
+            let n = age.value;
+            const nam = 2023;
+            let tuoi = nam - n;
+            let arr = [0,
+                        "Mẫu giáo 1",
+                        "Mẫu giáo 2",
+                        "Mẫu giáo 3",
+                        "Mẫu giáo 4",
+                        "Mẫu giáo 5",
+                        "Tiểu học 1",
+                        "Tiểu học 2",
+                        "Tiểu học 3",
+                        "Tiểu học 4",
+                        "Tiểu học 5",
+                        "THCS 6",
+                        "THCS 7",
+                        "THCS 8",
+                        "THCS 9",
+                        "THPT 10",
+                        "THPT 11",
+                        "THPT 12",
+                        "Đại học năm I",
+                        "Đại học năm II",
+                        "Đại học năm III",
+                        "Đại học năm IV"];
+            if(tuoi <= 21){
+                console.log(arr[tuoi]);
+                if (tuoi >= 15 && tuoi <= 21){
+                    s = "Tuổi: " + tuoi + "\n" + arr[tuoi] + "\nNăm tốt nghiệm THCS: " + (Number(n) + 15);
+                } else if (tuoi >= 18 && tuoi <= 21){
+                    s = "Tuổi: " + tuoi + "\n" + arr[tuoi] + "\nNăm tốt nghiệm THCS: " + (Number(n) + 15) + "\nNăm tốt nghiệp THPT: " + (Number(n) + 18);
+                } else {
+                    s = "Tuổi: " + tuoi + "\n" + arr[tuoi];
+                }
+                out.innerText = s;
+            } else {
+                if(n <= 1975){
+                    s = "Tuổi: " + tuoi + "\n" + "Năm tốt nghiệm THCS: " + (Number(n) + 15) + "\nNăm tốt nghiệp THPT: " + (Number(n) + 17);
+                } else {
+                    s = "Tuổi: " + tuoi + "\n" + "Năm tốt nghiệm THCS: " + (Number(n) + 15) + "\nNăm tốt nghiệp THPT: " + (Number(n) + 18);
+                }
+                out.innerText = s;
+            }
+        })
+    </script>
+
+</body>
+</html>
